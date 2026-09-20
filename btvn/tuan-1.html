@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BTVN Tuần 1 — Giao tiếp đa văn hóa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --ink: #1d4f9a;
+      --ink-soft: #2a5cad;
+      --line: #b7d0ea;
+      --margin: #e36b6b;
+      --paper: #fffdf6;
+      --rule: 34px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #ece7dc 0%, #d8d0c2 55%, #c9c0b0 100%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px 48px;
+      font-family: "Mali", "Segoe UI", sans-serif;
+    }
+
+    .desk {
+      width: min(820px, 100%);
+    }
+
+    .page {
+      position: relative;
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(circle at 18px 18%, rgba(0, 0, 0, 0.12) 5px, transparent 6px),
+        radial-gradient(circle at 18px 50%, rgba(0, 0, 0, 0.12) 5px, transparent 6px),
+        radial-gradient(circle at 18px 82%, rgba(0, 0, 0, 0.12) 5px, transparent 6px),
+        linear-gradient(90deg, #f3efe4 0 40px, transparent 40px),
+        linear-gradient(90deg, transparent 47px, var(--margin) 47px, var(--margin) 49px, transparent 49px),
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent calc(var(--rule) - 1px),
+          var(--line) calc(var(--rule) - 1px),
+          var(--line) var(--rule)
+        );
+      background-size: auto, auto, auto, auto, auto, 100% var(--rule);
+      color: var(--ink);
+      min-height: 1120px;
+      padding: calc(var(--rule) * 1.15) 36px 48px 64px;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.7) inset,
+        8px 14px 30px rgba(70, 55, 30, 0.22);
+      border-radius: 2px 8px 8px 2px;
+      line-height: var(--rule);
+    }
+
+    .page::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 62%, rgba(255, 255, 255, 0.18) 78%, transparent 92%);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: calc(var(--rule) * 0.15);
+    }
+
+    .label {
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: var(--rule);
+      font-style: italic;
+    }
+
+    h2 {
+      margin: calc(var(--rule) * 0.35) 0 0;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    p,
+    li {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--ink-soft);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .dash > li {
+      list-style: none;
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    .dash > li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+    }
+
+    .plus > li {
+      list-style: none;
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .plus > li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+    }
+
+    .lead {
+      margin-top: 0;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        min-height: 100vh;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="desk">
+    <article class="page">
+      <header>
+        <div class="label">BTVN</div>
+        <h1>
+          Tuần 1. Bản chất, vai trò, hình thức,<br />
+          phương tiện giao tiếp trong môi trường đa văn hóa
+        </h1>
+      </header>
+
+      <h2>Câu 1.</h2>
+      <ul class="dash">
+        <li>
+          Trong môi trường đa văn hóa, cần chú ý ngôn ngữ không lời vì nó chiếm
+          phần lớn hiệu quả giao tiếp và dễ mang ý nghĩa trái ngược giữa các nền
+          văn hóa. Nhờ vậy ta tránh hiểu lầm, xây dựng lòng tin và sự tôn trọng.
+        </li>
+        <li>
+          Ví dụ: Cử chỉ tay “OK” ở Mỹ nghĩa là tốt, thành công; nhưng ở Thổ Nhĩ Kỳ
+          lại bị coi là thô tục, xúc phạm.
+        </li>
+      </ul>
+
+      <h2>Câu 2.</h2>
+      <p class="lead">
+        Theo em, có thể rèn luyện kỹ năng giao tiếp đa văn hóa bằng cách:
+      </p>
+      <ul class="plus">
+        <li>Tìm hiểu phong tục và thói quen giao tiếp của đối phương.</li>
+        <li>Tôn trọng khác biệt văn hóa, sẵn sàng điều chỉnh cách ứng xử.</li>
+        <li>Thực hành giao tiếp thực tế.</li>
+        <li>Thường xuyên học hỏi để mở mang kiến thức bản thân.</li>
+      </ul>
+    </article>
+  </main>
+</body>
+</html>
