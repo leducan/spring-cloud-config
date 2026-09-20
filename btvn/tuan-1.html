@@ -71,6 +71,7 @@
       font-weight: 360;
       font-synthesis: none;
       font-feature-settings: "calt" 1, "liga" 1;
+      word-spacing: 0.16em;
     }
 
     .page.ready {
@@ -131,13 +132,7 @@
     ul {
       margin: 0;
       padding-left: 0;
-    }
-
-    .dash > li,
-    .plus > li {
       list-style: none;
-      padding-left: 1.2em;
-      text-indent: -1.2em;
     }
 
     .hw {
@@ -157,8 +152,8 @@
       }
 
       .page {
-        min-height: 960px;
-        padding: 8px 16px 36px 50px;
+        min-height: 1480px;
+        padding: 8px 16px 48px 50px;
         background-image:
           radial-gradient(circle at 14px 16%, rgba(90, 70, 40, 0.16) 4px, transparent 5px),
           radial-gradient(circle at 14px 50%, rgba(90, 70, 40, 0.16) 4px, transparent 5px),
@@ -219,12 +214,12 @@
       <h2>Câu 1.</h2>
       <ul class="dash">
         <li>
-          Trong môi trường đa văn hóa, cần chú ý ngôn ngữ không lời vì nó chiếm
+          – Trong môi trường đa văn hóa, cần chú ý ngôn ngữ không lời vì nó chiếm
           phần lớn hiệu quả giao tiếp và dễ mang ý nghĩa trái ngược giữa các nền
           văn hóa. Nhờ vậy ta tránh hiểu lầm, xây dựng lòng tin và sự tôn trọng.
         </li>
         <li>
-          Ví dụ: Cử chỉ tay “OK” ở Mỹ nghĩa là tốt, thành công; nhưng ở Thổ Nhĩ Kỳ
+          – Ví dụ: Cử chỉ tay “OK” ở Mỹ nghĩa là tốt, thành công; nhưng ở Thổ Nhĩ Kỳ
           lại bị coi là thô tục, xúc phạm.
         </li>
       </ul>
@@ -234,10 +229,10 @@
         Theo em, có thể rèn luyện kỹ năng giao tiếp đa văn hóa bằng cách:
       </p>
       <ul class="plus">
-        <li>Tìm hiểu phong tục và thói quen giao tiếp của đối phương.</li>
-        <li>Tôn trọng khác biệt văn hóa, sẵn sàng điều chỉnh cách ứng xử.</li>
-        <li>Thực hành giao tiếp thực tế.</li>
-        <li>Thường xuyên học hỏi để mở mang kiến thức bản thân.</li>
+        <li>+ Tìm hiểu phong tục và thói quen giao tiếp của đối phương.</li>
+        <li>+ Tôn trọng khác biệt văn hóa, sẵn sàng điều chỉnh cách ứng xử.</li>
+        <li>+ Thực hành giao tiếp thực tế.</li>
+        <li>+ Thường xuyên học hỏi để mở mang kiến thức bản thân.</li>
       </ul>
     </article>
   </main>
@@ -264,7 +259,7 @@
 
       nodes.forEach((node, index) => {
         const steady = node.parentElement.closest("[data-steady]");
-        const shake = steady ? 1.1 : 2.8;
+        const shake = steady ? 0.8 : 1.6;
         const rand = mulberry32(index * 997 + node.nodeValue.length * 13 + 42);
         const frag = document.createDocumentFragment();
 
