@@ -7,17 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
     rel="stylesheet"
   />
   <style>
     :root {
-      --ink: #1d4f9a;
-      --ink-soft: #2a5cad;
-      --line: #b7d0ea;
-      --margin: #e36b6b;
+      --ink: #1c4c96;
+      --ink-soft: #2456a3;
+      --line: #b9d3ee;
+      --margin: #dc6a6a;
       --paper: #fffdf6;
-      --rule: 34px;
+      --rule: 36px;
     }
 
     * {
@@ -42,12 +42,13 @@
 
     .page {
       position: relative;
+      overflow: hidden;
       background-color: var(--paper);
       background-image:
-        radial-gradient(circle at 18px 18%, rgba(0, 0, 0, 0.12) 5px, transparent 6px),
-        radial-gradient(circle at 18px 50%, rgba(0, 0, 0, 0.12) 5px, transparent 6px),
-        radial-gradient(circle at 18px 82%, rgba(0, 0, 0, 0.12) 5px, transparent 6px),
-        linear-gradient(90deg, #f3efe4 0 40px, transparent 40px),
+        radial-gradient(circle at 18px 16%, rgba(90, 70, 40, 0.16) 5px, transparent 6px),
+        radial-gradient(circle at 18px 50%, rgba(90, 70, 40, 0.16) 5px, transparent 6px),
+        radial-gradient(circle at 18px 84%, rgba(90, 70, 40, 0.16) 5px, transparent 6px),
+        linear-gradient(90deg, #f4f0e5 0 40px, transparent 40px),
         linear-gradient(90deg, transparent 47px, var(--margin) 47px, var(--margin) 49px, transparent 49px),
         repeating-linear-gradient(
           to bottom,
@@ -57,9 +58,10 @@
           var(--line) var(--rule)
         );
       background-size: auto, auto, auto, auto, auto, 100% var(--rule);
+      background-position: 0 0;
       color: var(--ink);
-      min-height: 1120px;
-      padding: calc(var(--rule) * 1.15) 36px 48px 64px;
+      min-height: 1122px;
+      padding: 10px 40px 48px 66px;
       box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.7) inset,
         8px 14px 30px rgba(70, 55, 30, 0.22);
@@ -72,19 +74,28 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(115deg, transparent 62%, rgba(255, 255, 255, 0.18) 78%, transparent 92%);
+      background: linear-gradient(115deg, transparent 62%, rgba(255, 255, 255, 0.16) 78%, transparent 92%);
+    }
+
+    header,
+    h2,
+    p,
+    ul,
+    li {
+      position: relative;
+      z-index: 1;
     }
 
     header {
       text-align: center;
-      margin-bottom: calc(var(--rule) * 0.15);
     }
 
     .label {
       font-weight: 700;
       font-size: 28px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      font-style: italic;
     }
 
     h1 {
@@ -95,53 +106,92 @@
       font-style: italic;
     }
 
+    .only-wide {
+      display: none;
+    }
+
     h2 {
-      margin: calc(var(--rule) * 0.35) 0 0;
+      margin: var(--rule) 0 0;
       font-size: 21px;
       font-weight: 700;
+      font-style: italic;
     }
 
     p,
     li {
       margin: 0;
-      font-size: 19px;
+      font-size: 19.5px;
       font-weight: 400;
+      font-style: italic;
       color: var(--ink-soft);
     }
 
     ul {
       margin: 0;
-      padding-left: 22px;
+      padding-left: 0;
     }
 
-    .dash > li {
+    .dash > li,
+    .plus > li {
       list-style: none;
-      position: relative;
-      padding-left: 18px;
-      margin-bottom: 0;
+      padding-left: 1.15em;
+      text-indent: -1.15em;
     }
 
     .dash > li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-    }
-
-    .plus > li {
-      list-style: none;
-      position: relative;
-      padding-left: 22px;
+      content: "– ";
     }
 
     .plus > li::before {
-      content: "+";
-      position: absolute;
-      left: 0;
+      content: "+ ";
       font-weight: 700;
     }
 
-    .lead {
-      margin-top: 0;
+    @media (min-width: 720px) {
+      .only-wide {
+        display: block;
+      }
+    }
+
+    @media (max-width: 719px) {
+      body {
+        padding: 12px 8px 28px;
+      }
+
+      .page {
+        min-height: 960px;
+        padding: 8px 18px 36px 54px;
+        background-image:
+          radial-gradient(circle at 14px 16%, rgba(90, 70, 40, 0.16) 4px, transparent 5px),
+          radial-gradient(circle at 14px 50%, rgba(90, 70, 40, 0.16) 4px, transparent 5px),
+          radial-gradient(circle at 14px 84%, rgba(90, 70, 40, 0.16) 4px, transparent 5px),
+          linear-gradient(90deg, #f4f0e5 0 30px, transparent 30px),
+          linear-gradient(90deg, transparent 36px, var(--margin) 36px, var(--margin) 38px, transparent 38px),
+          repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(var(--rule) - 1px),
+            var(--line) calc(var(--rule) - 1px),
+            var(--line) var(--rule)
+          );
+      }
+
+      .label {
+        font-size: 24px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p,
+      li {
+        font-size: 17px;
+      }
     }
 
     @media print {
@@ -154,6 +204,7 @@
         box-shadow: none;
         min-height: 100vh;
         border-radius: 0;
+        width: 210mm;
       }
     }
   </style>
@@ -164,7 +215,7 @@
       <header>
         <div class="label">BTVN</div>
         <h1>
-          Tuần 1. Bản chất, vai trò, hình thức,<br />
+          Tuần 1. Bản chất, vai trò, hình thức,<br class="only-wide" />
           phương tiện giao tiếp trong môi trường đa văn hóa
         </h1>
       </header>
@@ -183,7 +234,7 @@
       </ul>
 
       <h2>Câu 2.</h2>
-      <p class="lead">
+      <p>
         Theo em, có thể rèn luyện kỹ năng giao tiếp đa văn hóa bằng cách:
       </p>
       <ul class="plus">
